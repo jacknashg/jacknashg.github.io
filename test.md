@@ -340,7 +340,8 @@ g/M<sup>2</sup>/24hr: 克水/每平方米/每24小时，衡量透气性的单位
         [ffmpeg 操作](../../../warehouse2/wolfman/org-roam/20220509001816-ffmpeg_操作.md)  
         <https://hhsprings.bitbucket.io/docs/programming/examples/ffmpeg/overlay/_with_expression_4_emulating_progress_bar.html>  
         <https://hhsprings.bitbucket.io/docs/programming/examples/ffmpeg/overlay/_with_expression_1_scroll_roll.html>  
-        
+
+            {% highlight bash %}
             #! /bin/sh
             # pref="`basename $0 .sh`"
             # 需要把 svg convert 成高清晰度的 png，基于 png 来搞 overlay
@@ -354,6 +355,7 @@ g/M<sup>2</sup>/24hr: 克水/每平方米/每24小时，衡量透气性的单位
             color=green:size=10x66,loop=loop=-1:size=2,setsar=1[fg];
             [bg][fg]overlay='x=t/${dur}*W'[v]
             " -map '[v]' -an -shortest -r 30 -t ${dur} ${pref}-out.mp4
+            {% endhighlight %}
     
     4.  pandas, plot, stack bar chart. 串起来！     :已collect:
     
