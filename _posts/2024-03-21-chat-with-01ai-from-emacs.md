@@ -10,7 +10,8 @@ title: 在 Emacs 里愉快地和“零一万物” AI 聊天
     1.  [操作入口](#org53a9c22)
     2.  [url retrieve 异步逻辑](#org626f4f3)
 
-简短的有趣尝试，通过 emacs-lisp 编程实现在 emacs 中访问 01.ai 的 API，跟大模型对话。heavily inspired by org-ai（https://github.com/rksm/org-ai）。
+简短的有趣尝试，通过 emacs-lisp 编程实现在 emacs 中访问 01.ai 的 API，跟大模型对话。heavily inspired by org-ai（<https://github.com/rksm/org-ai>）。
+
 
 使用方式：  
 
