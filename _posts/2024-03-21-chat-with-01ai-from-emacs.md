@@ -10,7 +10,16 @@ title: 在 Emacs 里愉快地和“零一万物” AI 聊天
     1.  [操作入口](#org53a9c22)
     2.  [url retrieve 异步逻辑](#org626f4f3)
 
-简短的有趣尝试，通过 emacs-lisp 编程实现在 emacs 中访问 01.ai 的 API，跟大模型对话。heavily inspired by org-ai（<https://github.com/rksm/org-ai>）。
+
+代码位置：<https://github.com/jacknashg/mhb-ai-mode> 。
+
+有趣的尝试，通过 emacs-lisp 编程实现在 emacs 中访问 01.ai 的 API，跟大模型对话。heavily inspired by org-ai（<https://github.com/rksm/org-ai>）。
+
+
+
+使用效果：  
+![demo](/assets/imgs/240321syxg.gif)
+
 
 
 使用方式：  
@@ -20,8 +29,6 @@ title: 在 Emacs 里愉快地和“零一万物” AI 聊天
 3.  C-c C-c, 后台异步流式（stream）调用 01.ai 的 API（ <https://api.lingyiwanwu.com/v1/chat/completions> ）
 4.  API 流式响应的内容被插入到 special block 中
 
-使用效果：  
-![demo](/assets/imgs/240321syxg.gif)
 
 <a id="orgdc278ac"></a>
 
