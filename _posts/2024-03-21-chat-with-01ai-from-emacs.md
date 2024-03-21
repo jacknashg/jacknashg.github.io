@@ -21,7 +21,7 @@ title: 在 Emacs 里愉快地和“零一万物” AI 聊天
 4.  API 流式响应的内容被插入到 special block 中
 
 使用效果：  
-
+![demo](/assets/imgs/240321syxg.gif)
 
 <a id="orgdc278ac"></a>
 
