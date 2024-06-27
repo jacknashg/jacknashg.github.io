@@ -15,6 +15,7 @@ inline formula preview 的调用 stack：
 3.  org-create-formula-image  
     实现转 latex 为图片的核心功能。原理是把 latex region 的内容放在中间，同时穿靴戴帽组装成完整的 latex 文件，再通过（根据 org-preview-latex-default-process, org-preview-latex-process-alist 两个变量的定义来决定具体逻辑，默认是：） latex 转成 div，再通过 dvipng 转成 png，把 png 插入当前位置预览。  
     穿靴戴帽，靴子很简单，帽子的来源：  
+	{% highlight elisp %}
 	'''elisp
         (latex-header
          (or (plist-get processing-info :latex-header)
@@ -40,12 +41,12 @@ inline formula preview 的调用 stack：
         	       :latex-header "\\documentclass[preview]{standalone}\n\\usepackage{xeCJK}\n\\setCJKmainfont{华文楷体}\n\\usepackage[usenames]{color}\n\\usepackage{amsmath}\n\\pagestyle{empty}" ;; pagestyle{empty} 是必须的
         	       :latex-compiler ("xelatex -interaction nonstopmode -output-directory %o %f")
         	       :image-converter ("convert -density 150 %f %O")))
-	'''
+	{% endhighlight %}
 
 2.  操作变量 org-preview-latex-default-process，配置使用 xelatex-chinese 设定  
-	'''elisp    
+	{% highlight elisp %}    
         (setq org-preview-latex-default-process 'xelatex-chinese)
-	'''
+	{% endhighlight %}
 
 **解决方案的扩展说明**  
 
@@ -57,11 +58,11 @@ inline formula preview 的调用 stack：
 6.  在高分辨率设备上使用 convert，务必设置 density 参数为稍大数，否则图片很小，看不清楚
 7.  通过 convert 的 resize （而不是 density）来放大图片，没有效果
 8.  插入的 inline formula 图片可能过长，原因是 org-create-formula-image 函数中穿靴戴帽时进行了颜色设定，不明原因会导致图片过长，修改成：  
-	'''    
+	{% highlight elisp %}
         (with-temp-file texfile
               (insert latex-header)
               (insert "\n\\begin{document}\n"
         	      string
         	      "\n\\end{document}\n"))
-	'''				  
+	{% endhighlight %}
 
