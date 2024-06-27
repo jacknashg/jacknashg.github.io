@@ -23,13 +23,13 @@ inline formula preview 的调用 stack：
               (org-export-get-environment (org-export-get-backend 'latex))
               org-format-latex-header
               'snippet)))
-	'''
+	{% enghighlight %}
     
 
 **所以，要让 org-mode 中 inline latex 公式 preveiw 能显示中文，步骤：**  
 
 1.  操作变量 org-preview-latex-process-alist 值，增加自定义的内容 xelatex-chinese：  
-	'''elisp
+	{% highlight elisp %}
         (add-to-list 'org-preview-latex-process-alist
         	     '(xelatex-chinese
         	       :programs ("xelatex" "convert")
