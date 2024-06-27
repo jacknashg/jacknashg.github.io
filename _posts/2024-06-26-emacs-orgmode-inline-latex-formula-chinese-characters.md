@@ -22,7 +22,7 @@ inline formula preview 的调用 stack：
               (org-export-get-environment (org-export-get-backend 'latex))
               org-format-latex-header
               'snippet)))
-	{% enghighlight %}
+	{% endhighlight %}
     
 
 **所以，要让 org-mode 中 inline latex 公式 preveiw 能显示中文，步骤：**  
