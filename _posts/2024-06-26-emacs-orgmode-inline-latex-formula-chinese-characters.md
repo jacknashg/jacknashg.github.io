@@ -9,14 +9,13 @@ title: Emacs org-mode 的 inline latex 公式中显示中文
 
 inline formula preview 的调用 stack：  
 
-1.  org&#x2013;latex-preview-region
+1.  org--latex-preview-region
 2.  org-format-latex  
-    1.  org&#x2013;make-preview-overlay
+    1.  org--make-preview-overlay
 3.  org-create-formula-image  
     实现转 latex 为图片的核心功能。原理是把 latex region 的内容放在中间，同时穿靴戴帽组装成完整的 latex 文件，再通过（根据 org-preview-latex-default-process, org-preview-latex-process-alist 两个变量的定义来决定具体逻辑，默认是：） latex 转成 div，再通过 dvipng 转成 png，把 png 插入当前位置预览。  
     穿靴戴帽，靴子很简单，帽子的来源：  
 	{% highlight elisp %}
-	'''elisp
         (latex-header
          (or (plist-get processing-info :latex-header)
              (org-latex-make-preamble
